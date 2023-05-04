@@ -1,0 +1,19 @@
+Both scripts run with one argument. Can encode any file normally except
+zip files as they are treated as executables. example: 
+"python3 packer.py <input files>" This will output a .DAT file named
+like this "<zipfilename>_<inputfileextension>.DAT
+Everything starting with the underscore is critical to regeneration
+of the file as it indicates the final file extension. 
+
+Running unpackerrunner.py will regenerate the original file with
+its original file name assuming the .DAT file name hasnt been modified.
+Usage: "python3 unpackerrunner.py <DAT file>"
+It will unpack and restore the original file from the DAT file. 
+
+FOR ZIP FILES:::::::
+The packer utility treats zip files identically but the unpackerrunner has
+code designed to autorun code following a specific scheme.
+Zip file must have the same name as the internal folder. All zip files 
+must be a zipped version of a folder. The folder must contain a single
+centralized install script called "main.sh"
+IT WONT BE RUN WITH ROOT
